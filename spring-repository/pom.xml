@@ -17,7 +17,15 @@
 
 
     <modules>
-
+        <module>spring-repository-hive</module>
+        <module>spring-repository-integration-kafka</module>
+        <module>spring-repository-kafka</module>
+        <module>spring-repository-mongo</module>
+        <module>spring-repository-mysql</module>
+        <module>spring-repository-redis</module>
+        <module>spring-repository-rocketmq</module>
+        <module>spring-repository-sharding-jdbc</module>
+        <module>spring-repository-sqlserver</module>
     </modules>
 
     <dependencies>

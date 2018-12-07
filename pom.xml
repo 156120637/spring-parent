@@ -38,6 +38,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--dbpool-->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
@@ -83,7 +84,13 @@
                 <artifactId>hive-jdbc</artifactId>
                 <version>2.3.0</version>
             </dependency>
-            <!-- rocketmq -->
+            <!--jdbc-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-jdbc</artifactId>
+                <version>1.5.4.RELEASE</version>
+            </dependency>
+            <!--mq-->
             <dependency>
                 <groupId>org.apache.rocketmq</groupId>
                 <artifactId>rocketmq-common</artifactId>
@@ -93,6 +100,33 @@
                 <groupId>org.apache.rocketmq</groupId>
                 <artifactId>rocketmq-client</artifactId>
                 <version>4.3.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>2.1.4.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-client</artifactId>
+                <version>4.3.1</version>
+            </dependency>
+            <!--适配低版本的kafka 0.9以下-->
+            <dependency>
+                <groupId>org.springframework.integration</groupId>
+                <artifactId>spring-integration-kafka</artifactId>
+                <version>1.3.0.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-mongodb</artifactId>
+                <version>1.10.16.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>1.5.4.RELEASE</version>
             </dependency>
 
             <!-- common -->
@@ -156,6 +190,7 @@
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>2.6.1</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 

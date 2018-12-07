@@ -14,12 +14,9 @@
 
     <name>spring-web</name>
 
+    <modules>
+        <module>spring-web-blog</module>
+    </modules>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-    </dependencies>
 
 </project>

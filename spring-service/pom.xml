@@ -15,6 +15,10 @@
 
     <name>spring-service</name>
 
+    <modules>
+        <module>spring-service-base</module>
+        <module>spring-service-provider</module>
+    </modules>
 
     <dependencies>
         <dependency>
