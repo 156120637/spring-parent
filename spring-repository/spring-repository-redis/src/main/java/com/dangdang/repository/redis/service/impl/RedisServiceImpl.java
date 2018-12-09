@@ -1,6 +1,6 @@
 package com.dangdang.repository.redis.service.impl;
 
-import com.dangdang.repository.redis.consts.RedisDbEnum;
+import com.dangdang.repository.redis.constants.RedisDbEnum;
 import com.dangdang.repository.redis.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package com.dangdang.repository.redis.service;
 
-import com.dangdang.repository.redis.consts.RedisDbEnum;
+import com.dangdang.repository.redis.constants.RedisDbEnum;
 import redis.clients.jedis.BinaryClient;
 import redis.clients.jedis.SortingParams;
 

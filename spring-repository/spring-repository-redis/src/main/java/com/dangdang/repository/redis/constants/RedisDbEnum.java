@@ -1,4 +1,4 @@
-package com.dangdang.repository.redis.consts;
+package com.dangdang.repository.redis.constants;
 
 import lombok.Getter;
 

@@ -16,10 +16,10 @@ import java.util.List;
 import java.util.Set;
 
 @Data
-@PropertySource("classpath:redis.properties")
+@PropertySource("classpath:redis-sentinel.properties")
 @ConfigurationProperties(prefix = "redis.adapter")
 @Configuration
-public class RedisSourceConfig {
+public class RedisSourceSentinelConfig {
 
     private Integer maxIdle;
     private Integer minIdle;
@@ -31,8 +31,8 @@ public class RedisSourceConfig {
     private String masterName;
     private String sentinel;
 
-    @Bean(name = "jedisPoolConfig")
-    @Qualifier("jedisPoolConfig")
+    @Bean(name = "jedisPoolConfigSentinel")
+    @Qualifier("jedisPoolConfigSentinel")
     public JedisPoolConfig jedisPoolConfig() {
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
         jedisPoolConfig.setMaxIdle(maxIdle);
@@ -46,7 +46,7 @@ public class RedisSourceConfig {
     }
 
     @Bean
-    public JedisSentinelPool jedisSentinelPool(@Qualifier("jedisPoolConfig") JedisPoolConfig jedisPoolConfig) {
+    public JedisSentinelPool jedisSentinelPool(@Qualifier("jedisPoolConfigSentinel") JedisPoolConfig jedisPoolConfig) {
 
         List<String> sentinelList = Arrays.asList(sentinel.split(","));
         Set<String> sentinels = new HashSet<>(sentinelList);
