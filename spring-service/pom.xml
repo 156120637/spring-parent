@@ -18,6 +18,7 @@
     <modules>
         <module>spring-service-base</module>
         <module>spring-service-provider</module>
+        <module>spring-service-blog</module>
     </modules>
 
     <dependencies>
