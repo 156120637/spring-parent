@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+    <property resource="logback.properties"/>
+
+    <!-- 彩色日志 -->
+    <!-- 彩色日志依赖的渲染类 -->
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+    <conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+    <conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+    <!-- 彩色日志格式 -->
+    <property name="CONSOLE_LOG_PATTERN" value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
+
+    <!-- 控制台输出 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 按照每天生成日志文件 -->
+    <appender name="file-all" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logback.dir}/${project.artifactId}-all.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logback.dir}/${project.artifactId}-all.%d{yyyy-MM-dd}-%i.log</fileNamePattern>
+            <!--日志文件保留天数-->
+            <MaxHistory>${logback.maxhistory}</MaxHistory>
+            <!--日志文件最大的大小-->
+            <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <MaxFileSize>${logback.maxfilesize}</MaxFileSize>
+            </TimeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} -%5p [%15.15t] %-40.40logger{39} : %m%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="file-info" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logback.dir}/${project.artifactId}-info.log</file>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logback.dir}/${project.artifactId}-info.%d{yyyy-MM-dd}-%i.log</fileNamePattern>
+            <!--日志文件保留天数-->
+            <MaxHistory>${logback.maxhistory}</MaxHistory>
+            <!--日志文件最大的大小-->
+            <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <MaxFileSize>${logback.maxfilesize}</MaxFileSize>
+            </TimeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} -%5p [%15.15t] %-40.40logger{39} : %m%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="file-error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logback.dir}/${project.artifactId}-error.log</file>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logback.dir}/${project.artifactId}-error.%d{yyyy-MM-dd}-%i.log</fileNamePattern>
+            <MaxHistory>${logback.maxhistory}</MaxHistory>
+            <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <MaxFileSize>${logback.maxfilesize}</MaxFileSize>
+            </TimeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} -%5p [%15.15t] %-40.40logger{39} : %m%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 第三方日志级别的控制 -->
+    <!-- dangdang -->
+    <logger name="com.dangdang.ddframe.rdb.sharding" level="INFO" />
+    <!-- org.apache -->
+    <logger name="org.apache.kafka" level="INFO"/>
+    <logger name="org.apache.zookeeper" level="INFO" />
+    <logger name="org.apache.curator.framework.recipes" level="INFO" />
+    <!-- org.springframework -->
+    <logger name="org.springframework" level="INFO" />
+    <logger name="org.springframework.data.mongodb" level="DEBUG"/>
+    <logger name="org.springframework.data.elasticsearch" level="DEBUG"/>
+    <!-- other -->
+    <logger name="org.mongodb.driver.cluster" level="INFO"/>
+    <!-- swagger -->
+    <logger name="springfox.documentation.schema" level="INFO"/>
+    <logger name="springfox.documentation.spring.web" level="INFO"/>
+    <logger name="springfox.documentation.swagger" level="INFO"/>
+    <!--thymeleaf-->
+    <logger name="org.thymeleaf" level="ERROR"/>
+
+    <root>
+        <level value="${logback.level}" />
+        <appender-ref ref="console" />
+        <appender-ref ref="file-all" />
+        <appender-ref ref="file-info" />
+        <appender-ref ref="file-error" />
+    </root>
+
+</configuration>
