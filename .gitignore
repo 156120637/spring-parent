@@ -2,8 +2,8 @@
 target/
 *.jar
 *.war
-*.zip
 *.tar
+*.gz
 
 # eclipse ignore
 .settings/
