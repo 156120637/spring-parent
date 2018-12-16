@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 host_list="
 机器列表
 "
