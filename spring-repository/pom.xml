@@ -26,6 +26,7 @@
         <module>spring-repository-rocketmq</module>
         <module>spring-repository-sharding-jdbc</module>
         <module>spring-repository-sqlserver</module>
+        <module>spring-repository-elasticsearch</module>
     </modules>
 
     <dependencies>
