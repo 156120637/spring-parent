@@ -9,7 +9,6 @@
     </parent>
     <groupId>com.dangdang</groupId>
     <artifactId>spring-web</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>spring-web</name>

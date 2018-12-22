@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 hosts="
 机器IP
 "

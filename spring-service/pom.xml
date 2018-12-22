@@ -10,7 +10,6 @@
 
     <groupId>com.dangdang</groupId>
     <artifactId>spring-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>spring-service</name>
@@ -19,6 +18,7 @@
         <module>spring-service-base</module>
         <module>spring-service-provider</module>
         <module>spring-service-blog</module>
+        <module>spring-service-job</module>
     </modules>
 
     <dependencies>
