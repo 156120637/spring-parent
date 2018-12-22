@@ -11,19 +11,16 @@ import org.springframework.stereotype.Component;
  */
 @Slf4j
 @Component
-@ElasticSimpleJob(jobName = "verificateDataCollect",
+@ElasticSimpleJob(jobName = "baseElasticJob",
         cron = "*/2 * * * * ?",
         shardingTotalCount = 1,
         shardingItemParameters = "0=zero")
 public class BaseElasticJob implements SimpleJob {
 
-
     @Override
     public void execute(ShardingContext shardingContext) {
 
         log.info("job has start 2 second  ,please check.....begin your bussiness code");
-
-
 
 
     }
