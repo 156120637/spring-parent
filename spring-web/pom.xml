@@ -16,6 +16,7 @@
     <modules>
         <module>spring-web-blog</module>
         <module>spring-web-swagger</module>
+        <module>spring-web-easyui</module>
     </modules>
 
     <dependencies>
