@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<script type="text/javascript" src="js/user/user.js" th:src="@{/js/user/user.js}"></script>
+<table class="easyui-datagrid">
+    <thead>
+        <tr>
+            <th data-options="field:'caid',fitColumns:true,fit:true">ID</th>
+            <th data-options="field:'xxx',fitColumns:true,fit:true">商品名</th>
+            <th data-options="field:'cacount',fitColumns:true,fit:true">数量</th>
+            <th data-options="field:'orderstatus',fitColumns:true,fit:true">状态</th>
+            <th data-options="field:'cacreate',fitColumns:true,fit:true">创建时间</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="cart: ${carts}">
+            <td  th:text="${cart.caid}"></td>
+            <td  th:each="goods:${cart.goods}" th:text="${goods.goname}"></td>
+            <td  th:text="${cart.cacount}"></td>
+            <td  th:text="${cart.orderstatus==1?'未生成订单':'已生成订单'}"></td>
+            <td  th:text="${#calendars.format(cart.cacreate,'yyyy-MM-dd')}"></td>
+        </tr>
+
+    </tbody>
+</table>
+</html>

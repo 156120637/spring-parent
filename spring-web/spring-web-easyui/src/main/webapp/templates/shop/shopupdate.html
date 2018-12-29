@@ -1,0 +1,69 @@
+<style type="text/css">
+    .input-width input {
+        width:172px;
+    }
+</style>
+<script type="text/javascript" src="js/shop/shop.js" th:src="@{/js/shop/shop.js}"></script>
+<div style="text-align: center">
+    <h3>修改商铺信息</h3>
+    <form id="updateShop" method="post" enctype="multipart/form-data">
+        <input type="" hidden th:value="${shop.shid}" name="shid" />
+        <table align="center">
+            <tr class="input-width">
+
+                <th>
+                    店铺名称:
+                </th>
+                <td>
+                    <input class="easyui-textbox" data-options="required:true" type="text" name="shname" th:value="${shop.shname}"/>
+                </td>
+                <th>
+                    联系方式:
+                </th>
+                <td>
+                    <input class="easyui-textbox" data-options="required:true" type="text" name="shcontact" th:value="${shop.shcontact}"/>
+                </td>
+            </tr>
+            <tr class="input-width">
+                <th>
+                    商铺等级:
+                </th>
+                <td>
+                    <input class="easyui-textbox" type="text" name="shrole" th:value="${shop.shrole}"/>
+                </td>
+                <th>
+                    商铺地址:
+                </th>
+                <td>
+                    <input class="easyui-textbox" data-options="required:true" type="text" name="shaddress" th:value="${shop.shaddress}"/>
+                </td>
+            </tr>
+            <tr class="input-width">
+                <th>
+                    商铺图片:
+                </th>
+                <td>
+                    <input class="easyui-filebox" type="text" name="file" data-options="buttonText:'选择封面'"/>
+
+                </td>
+                <th> </th>
+                <td> </td>
+            </tr>
+            <tr>
+                <th>图片展示</th>
+                <td colspan="3">
+                    <img th:src="${shop.shimage}" width="50%" height="50%">
+                </td>
+            </tr>
+            <tr >
+                <th>
+                    店铺描述:
+                </th>
+                <td colspan="3">
+                    <input class="easyui-textbox" style="width: 428px;" th:value="${shop.shdescribes}"  type="text" data-options="multiline:true" name="shdescribes"/>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</div>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>不好意思,出错了</title>
+    <link rel="stylesheet" type="text/css" href="easyui/1.5/themes/default/easyui.css" th:href="@{/easyui/1.5/themes/default/easyui.css}" />
+    <link rel="stylesheet" type="text/css" href="css/wu.css" th:href="@{/css/wu.css}" />
+    <link rel="stylesheet" type="text/css" href="css/icon.css" th:href="@{/css/icon.css}" />
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js" th:src="@{/js/jquery-1.8.0.min.js}"></script>
+    <script type="text/javascript" src="easyui/1.5/jquery.easyui.min.js" th:src="@{/easyui/1.5/jquery.easyui.min.js}"></script>
+    <script type="text/javascript" src="easyui/1.5/locale/easyui-lang-zh_CN.js" th:src="@{/easyui/1.5/locale/easyui-lang-zh_CN.js}"></script>
+    <style type="text/css">
+        input {
+            width: 320px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body style="background-color: #F7F7F7">
+
+<div  >
+    <br/><br/><br/>
+    <div id="" style="text-align: center;padding: 40px;width: 800px;height: 600px;margin: 0 auto;">
+        <div style="font-size: 28px;">
+            <h3 >500 (-_-) !</h3>
+            <h3 >不好意思,出错了</h3>
+        </div>
+        <div>
+            <p>时间:[[${#calendars.format(timestamp,'yyyy-MM-dd HH:mm:ss')}]]</p>
+            <p th:if="${type}!=null">类型:[[${type}]]</p>
+            <p th:if="${status}!=null">状态码:[[${status}]]</p>
+        </div>
+        <div style="font-size: 20px;">
+            <h3 >您可以 <a th:href="@{/}" style="color: #3399FF;">返回登录页--></a>&nbsp;&nbsp;&nbsp;&nbsp;<a style="color: #3399FF;" th:href="@{/user/index.htm}">返回主页--></a></h3>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<script type="text/javascript" src="js/user/user.js" th:src="@{/js/user/user.js}"></script>
+<table class="easyui-datagrid" data-options="fit:true">
+    <thead>
+    <tr>
+        <th data-options="field:'gcoid',fitColumns:true,fit:true">ID</th>
+        <th data-options="field:'xxx',fitColumns:true,fit:true">账号</th>
+        <th data-options="field:'xx',fitColumns:true,fit:true">密码</th>
+        <th data-options="field:'x',fitColumns:true,fit:true">电话号</th>
+        <th data-options="field:'xxxxx',fitColumns:true,fit:true">状态</th>
+        <th data-options="field:'xxxx',fitColumns:true,fit:true">创建时间</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td  th:text="${userInfo.usid}"></td>
+        <td  th:text="${userInfo.usname}"></td>
+        <td  th:text="${userInfo.uspassword}"></td>
+        <td  th:text="${userInfo.usphone}"></td>
+        <td  th:text="${userInfo.usstatus==0?'启用':'禁用'}"></td>
+        <td  th:text="${#calendars.format(userInfo.uscreate,'yyyy-MM-dd')}"></td>
+    </tr>
+    </tbody>
+</table>
+</html>

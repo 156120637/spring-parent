@@ -1,0 +1,27 @@
+<script type="text/javascript" src="" th:src="@{/js/category/category.js}"></script>
+
+<style type="text/css">
+    .input-width input {
+        width:172px;
+    }
+</style>
+<div data-options="" >
+    <form id="categroy_add" style="text-align: center;">
+        <h3>新增分类</h3>
+        <table align="center">
+            <tr class="input-width">
+                <th>分类名字:</th>
+                <td><input name="caname" data-options="required:true" class="easyui-textbox"></td>
+            </tr>
+            <tr>
+                <th>所属类别:</th>
+                <td >
+                    <select style="width: 178px;" class="easyui-combobox" name="carole">
+                        <option value="1">资讯</option>
+                        <option value="2">商品</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

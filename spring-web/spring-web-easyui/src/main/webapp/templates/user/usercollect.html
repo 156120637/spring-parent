@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<script type="text/javascript" src="js/user/user.js" th:src="@{/js/user/user.js}"></script>
+<table class="easyui-datagrid" data-options="fit:true">
+    <thead>
+    <tr>
+        <th data-options="field:'scid',fitColumns:true,fit:true">ID</th>
+        <th data-options="field:'xxx',fitColumns:true,fit:true">商品名</th>
+        <th data-options="field:'x',fitColumns:true,fit:true">商铺名</th>
+        <th data-options="field:'xx',fitColumns:true,fit:true">创建时间</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="collect: ${collect}">
+        <td  th:text="${collect.scid}"></td>
+        <td  th:text="${collect.goods.goname}"></td>
+        <td  th:text="${collect.shop.shname}"></td>
+        <td  th:text="${#calendars.format(collect.sccreate,'yyyy-MM-dd')}"></td>
+    </tr>
+    </tbody>
+</table>
+</html>

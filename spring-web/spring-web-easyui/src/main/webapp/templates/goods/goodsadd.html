@@ -1,0 +1,57 @@
+<script type="text/javascript" src="" th:src="@{/js/goods/goods.js}"></script>
+<style type="text/css">
+    .input-width input {
+        width:172px;
+    }
+</style>
+<div data-options="" style="margin: auto">
+    <form id="goodsadd" style="text-align: center" method="post" enctype="multipart/form-data">
+        <h2>新增商品</h2><br/>
+        <table align="center">
+            <tr class="input-width">
+                <th>商品名称:</th>
+                <td><input name="goname" data-options="required:true" placeholder="商品名称" class="easyui-textbox"></td>&nbsp;
+                <th>原价:</th>
+                <td><input name="goprice" data-options="required:true" class="easyui-textbox"></td>
+            </tr>
+            <tr class="input-width">
+                <th>现价:</th>
+                <td><input name="goshuprice" data-options="required:true" class="easyui-textbox"></td>&nbsp;
+                <th>封面图:</th>
+                <td><input name="file" class="easyui-filebox" data-options="buttonText:'选择文件'"></td>
+            </tr>
+            <tr class="input-width">
+                <th>存货:</th>
+                <td><input name="gostock" data-options="required:true" class="easyui-textbox"></td>&nbsp;
+                <th>货号:</th>
+                <td><input name="gonumber" class="easyui-textbox"></td>&nbsp;
+            </tr>
+            <tr class="input-width">
+                <th>尺寸:</th>
+                <td><input name="gosize" class="easyui-textbox"></td>
+                <th>产地:</th>
+                <td><input name="goaddress" data-options="required:true" class="easyui-textbox"></td>&nbsp;
+            </tr>
+            <tr class="input-width">
+                <th>所属商铺:</th>
+                <td>
+                    <select data-options="required:true" class="easyui-combobox" name="shopid" style="width:180px;">
+                        <option th:value="${shop.shid}" th:text="${shop.shname}" th:each="shop:${shops}" >国家明画</option>
+                    </select>
+                </td>
+                <th>所属类别:</th>
+                <td>
+                    <select data-options="required:true" class="easyui-combobox" name="categoryid" style="width:180px;">
+                        <option th:each="category:${category}" th:value="${category.caid}" th:text="${category.caname}">国家明画</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>商品参数描述:</th>
+                <td colspan="3"><input name="name" class="easyui-textbox" style="width: 428px;"
+                                       data-options="multiline:true"></td>
+            </tr>
+
+        </table>
+    </form>
+</div>

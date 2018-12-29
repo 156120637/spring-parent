@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<script type="text/javascript" src="js/user/user.js" th:src="@{/js/user/user.js}"></script>
+<table class="easyui-datagrid" data-options="fit:true">
+    <thead>
+    <tr>
+        <th data-options="field:'gcoid',fitColumns:true,fit:true">ID</th>
+        <th data-options="field:'xxx',fitColumns:true,fit:true">评论内容</th>
+        <th data-options="field:'gccreate',fitColumns:true,fit:true">评论时间</th>
+        <th data-options="field:'xxx',fitColumns:true,fit:true">类别</th>
+        <th data-options="field:'goodsid',fitColumns:true,fit:true">类别名称</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="newsComment: ${newsComments}">
+        <td  th:text="${newsComment.ncoid}"></td>
+        <td  th:text="${newsComment.ncocontent}"></td>
+        <td  th:text="${#calendars.format(newsComment.nccreate,'yyyy-MM-dd')}"></td>
+        <td  >资讯</td>
+        <td  th:text="${newsComment.news.netitle}"></td>
+    </tr>
+    <hr/>
+    <tr th:each="goodsComment: ${goodsComments}">
+        <td  th:text="${goodsComment.gcoid}"></td>
+        <td  th:text="${goodsComment.gcocontent}"></td>
+        <td  th:text="${#calendars.format(goodsComment.gccreate,'yyyy-MM-dd')}"></td>
+        <td  >商品</td>
+        <td  th:text="${goodsComment.goods.goname}"></td>
+    </tr>
+
+    </tbody>
+</table>
+</html>

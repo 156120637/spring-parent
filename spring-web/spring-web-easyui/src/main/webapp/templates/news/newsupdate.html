@@ -1,0 +1,42 @@
+<script type="text/javascript" src="" th:src="@{/js/news/news.js}"></script>
+<style type="text/css">
+    .input-width input {
+        width:172px;
+    }
+</style>
+<div >
+    <form id="news_update" style="text-align: center;" method="post" enctype="multipart/form-data">
+        <h3>更新资讯</h3><br />
+        <input name="neid" th:value="${news.neid}" hidden="hidden">
+        <table align="center">
+            <tr class="input-width">
+                <th>标题</th>
+                <td><input name="netitle"  data-options="required:true" th:value="${news.netitle}" class="easyui-textbox"></td>
+                <th>创建时间</th>
+                <td><input name="necreate" th:value="${#calendars.format(news.necreate,'yyyy-MM-dd')}" class="easyui-textbox" readonly></td>
+            </tr>
+            <tr class="input-width">
+                <th>所属类别</th>
+                <td>
+                    <select  class="easyui-combobox" name="categoryid" style="width:180px;">
+                        <option th:each="category:${categorys}" th:selected="${category.caid}==${news.categoryid}" th:text="${category.caname}" th:value="${category.caid}" >国家明画</option>
+                    </select>
+                </td>
+                <th>封面图片</th>
+                <td><input name="file" class="easyui-filebox" data-options="buttonText:'浏览'"></td>
+            </tr>
+            <tr>
+                <th>详细内容</th>
+                <td colspan="3"><input name="necontent" th:value="${news.necontent}" class="easyui-textbox" style="width: 425px;"
+                                       data-options="multiline:true"></td>
+            </tr>
+            <tr>
+                <th>图片展示</th>
+                <td colspan="3">
+                    <img src="" th:src="${news.neimage}" />
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</div>

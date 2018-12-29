@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script type="text/javascript" src="" th:src="@{/js/news/news.js}"></script>
+</head>
+<table id="tb_comment_news" class="easyui-datagrid" >
+    <thead>
+    <tr>
+        <th data-options="field:'ncoid',fitColumns:true,fit:true">ID</th>
+        <th data-options="field:'xx',fitColumns:true,fit:true">评论内容</th>
+        <th data-options="field:'xxx',fitColumns:true,fit:true">用户名</th>
+        <th data-options="field:'gccreate',fitColumns:true,fit:true">评论时间</th>
+        <th data-options="field:'a',fitColumns:true,fit:true">操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="comment: ${comments}">
+        <td  th:text="${comment.ncoid}"></td>
+        <td  th:text="${comment.ncocontent}"></td>
+        <td  th:text="${comment.user.usname}"></td>
+        <td  th:text="${#calendars.format(comment.nccreate,'yyyy-MM-dd')}"></td>
+        <td >
+            <a  onclick="delNews('+[[${comment.ncoid}]]+')" class="easyui-linkbutton" data-options="iconCls:'icon-remove'" >删除</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div id="addOne"></div>
+<div id="updateOne"></div>
+
+<script type="text/javascript">
+
+
+    /*删除*/
+    function delNews(id) {
+        $.messager.confirm('确认对话框', '您确定删除这条记录吗？', function(r){
+            if (r){
+                $.ajax({
+                    type:"get",
+                    url:"/news/removeNews/",
+                    success:function (data) {
+                        $.messager.show({
+                            title:'操作提示',
+                            msg:'删除成功',
+                            timeout:3000,
+                            showType:'slide'
+                        });
+                    }
+                });
+            }
+        });
+    }
+
+
+</script>
+</html>

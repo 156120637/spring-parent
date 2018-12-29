@@ -1,0 +1,8 @@
+
+<form method="post" style="text-align: center" action="" id="updateUserInfo">
+    <br/><br/><br/>
+    ID:&nbsp;   &nbsp;  &nbsp;&nbsp; <input name="usid" th:value="${user.usid}" readonly="readonly" class="easyui-textbox" data-options="width:250,height:30,prompt:'ID'"/><br/><br/>
+    账号: &nbsp;  &nbsp;    <input name="usname" th:value="${user.usname}" class="easyui-textbox" data-options="required: true,width:250,height:30,prompt:'账号'"/><br/><br/>
+    密码: &nbsp;  &nbsp;    <input name="uspassword" th:value="${user.uspassword}" value="123456" class="easyui-passwordbox" data-options="required: true,width:250,height:30,prompt:'密码'"/><br/><br/>
+    手机号: <input name="usphone" th:value="${user.usphone}"  class="easyui-textbox" data-options="width:250,height:30,prompt:'手机号'"/><br/><br/>
+</form>

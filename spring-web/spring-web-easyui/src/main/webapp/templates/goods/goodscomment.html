@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script type="text/javascript" src="" th:src="@{/js/goods/goods.js}"></script>
+</head>
+<table class="easyui-datagrid" data-options="fit:true" id="tb_comment">
+    <thead>
+    <tr>
+        <th data-options="field:'gcoid',fitColumns:true,fit:true">ID</th>
+        <th data-options="field:'xx',fitColumns:true,fit:true">评论内容</th>
+        <th data-options="field:'xxx',fitColumns:true,fit:true">用户名</th>
+        <th data-options="field:'gccreate',fitColumns:true,fit:true">评论时间</th>
+        <th data-options="field:'a',fitColumns:true,fit:true">操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="comment: ${comments}">
+        <td  th:text="${comment.gcoid}"></td>
+        <td  th:text="${comment.gcocontent}"></td>
+        <td  th:text="${comment.user.usname}"></td>
+        <td  th:text="${#calendars.format(comment.gccreate,'yyyy-MM-dd')}"></td>
+        <td >
+            <a onclick="delGoods('+[[${comment.gcoid}]]+')" data-options="plain:true" class="easyui-linkbutton" >删除</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</html>
+
+
+
+
+
+
+
+<table id="tb_comment"></table>
+
+
+
+<script type="text/javascript">
+
+    /*删除*/
+    function delGoods(id) {
+        $.messager.confirm('确认对话框', '您确定删除这条记录吗？', function(r){
+            if (r){
+                $.ajax({
+                    type:"get",
+                    url:"/goods/removeGoods/"+id,
+                    data:{"id":id},
+                    success:function (result) {
+                        $.messager.alert('提示',result.message,'icon-ok',function () {
+                            $("#tb_comment").datagrid('reload');
+                        });
+                    }
+                });
+            }
+        });
+    }
+</script>

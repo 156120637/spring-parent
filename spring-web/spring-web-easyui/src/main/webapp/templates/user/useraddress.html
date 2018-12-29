@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<script type="text/javascript" src="js/user/user.js" th:src="@{/js/user/user.js}"></script>
+<table class="easyui-datagrid" data-options="fit:true">
+    <thead>
+    <tr>
+        <th data-options="field:'gcoid',fitColumns:true,fit:true">ID</th>
+        <th data-options="field:'xxx',fitColumns:true,fit:true">收货人</th>
+        <th data-options="field:'xx',fitColumns:true,fit:true">手机号</th>
+        <th data-options="field:'x',fitColumns:true,fit:true">邮编</th>
+        <th data-options="field:'xxxx',fitColumns:true,fit:true">收货地址</th>
+        <th data-options="field:'xxxxx',fitColumns:true,fit:true">添加时间</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="address: ${addresses}">
+        <td  th:text="${address.adid}"></td>
+        <td  th:text="${address.adrecname}"></td>
+        <td  th:text="${address.adphone}"></td>
+        <td  th:text="${address.adcode}"></td>
+        <td  th:text="${address.addressdetail}"></td>
+        <td  th:text="${#calendars.format(address.adcreate,'yyyy-MM-dd')}"></td>
+    </tr>
+   </tbody>
+</table>
+</html>

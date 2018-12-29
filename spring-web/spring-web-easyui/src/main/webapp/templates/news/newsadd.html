@@ -1,0 +1,35 @@
+<script type="text/javascript" src="" th:src="@{/js/news/news.js}"></script>
+<style type="text/css">
+    .input-width input {
+        width:172px;
+    }
+</style>
+<div style="margin: auto">
+    <form id="news_add" method="post" style="text-align: center;" enctype="multipart/form-data">
+        <h3>新增资讯</h3><br/>
+        <table align="center">
+            <tr class="input-width">
+                <th>标题</th>
+                <td><input name="netitle" data-options="required:true" class="easyui-textbox"></td>
+                <th>概述</th>
+                <td><input name="neintro" data-options="required:true" class="easyui-textbox"></td>
+            </tr>
+            <tr class="input-width">
+                <th>所属类别</th>
+                <td>
+                    <select id="cc" class="easyui-combobox" name="categoryid" style="width:180px;">
+                        <option value="1" th:each="category :${category}" th:value="${category.caid}" th:text="${category.caname}">国家明画</option>
+                    </select>
+                </td>
+                <th>封面图片</th>
+                <td><input name="file" class="easyui-filebox" data-options="buttonText:'浏览'"></td>
+            </tr>
+            <tr>
+                <th>详细内容</th>
+                <td colspan="3"><input name="necontent" class="easyui-textbox" style="width: 425px;"
+                                       data-options="multiline:true"></td>
+            </tr>
+
+        </table>
+    </form>
+</div>

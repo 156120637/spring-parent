@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script type="text/javascript" src="js/shop/shop.js" th:src="@{/js/shop/shop.js}"></script>
+    <style type="text/css">
+        .input-width input {
+            width: 172px;
+        }
+    </style>
+</head>
+<div style="text-align: center">
+    <h3>添加商铺</h3>
+    <form id="saveShop" method="post" enctype="multipart/form-data">
+        <table align="center">
+            <tr class="input-width">
+                <th>
+                    店铺名称:
+                </th>
+                <td>
+                    <input class="easyui-textbox" data-options="required:true" type="text" name="shname"/>
+                </td>
+                <th>
+                    联系方式:
+                </th>
+                <td>
+                    <input class="easyui-textbox" data-options="required:true" type="text" name="shcontact"/>
+                </td>
+            </tr>
+            <tr class="input-width">
+                <th>
+                    商铺等级:
+                </th>
+                <td>
+                    <input class="easyui-textbox" type="text" name="shrole"/>
+                </td>
+                <th>
+                    商铺地址:
+                </th>
+                <td>
+                    <input class="easyui-textbox" data-options="required:true" type="text" name="shaddress"/>
+                </td>
+            </tr>
+            <tr class="input-width">
+                <th>
+                    商铺图片:
+                </th>
+                <td>
+                    <input class="easyui-filebox" type="text" name="file" data-options="buttonText:'选择封面'"/>
+                </td>
+                <th>
+
+                </th>
+                <td>
+
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    店铺描述:
+                </th>
+                <td colspan="3">
+                    <input class="easyui-textbox" style="width: 428px;" type="text" data-options="multiline:true"
+                           name="shdescribes"/>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+</html>
+

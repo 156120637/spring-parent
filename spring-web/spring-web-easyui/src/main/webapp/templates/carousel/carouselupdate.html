@@ -1,0 +1,7 @@
+<form method="post" style="text-align: center" action="" id="updateCarousel" enctype="multipart/form-data">
+    <br/><br/><br/>
+    <input name="caid" class="easyui-textbox" th:value="${carousel.caid}" readonly data-options="required:true,width:250,height:30,prompt:'ID'"/><br/><br/>
+    <input class="easyui-filebox" name="file" data-options="required:true,width:250,height:30,prompt:'选择文件',buttonText:'选择文件'"><br/><br/>
+    <input name="caname" class="easyui-textbox" th:value="${carousel.caname}" data-options="required:true,width:250,height:30,prompt:'轮播图名称'"/><br/><br/>
+    <img src="" th:src="${carousel.caimage}" width="50%" height="50%"></img>
+</form>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8" />
+		<title>书画网-后台管理</title>
+		<link rel="stylesheet" type="text/css" href="easyui/1.5/themes/default/easyui.css" th:href="@{/easyui/1.5/themes/default/easyui.css}" />
+		<link rel="stylesheet" type="text/css" href="css/wu.css" th:href="@{/css/wu.css}" />
+		<link rel="stylesheet" type="text/css" href="css/icon.css" th:href="@{/css/icon.css}" />
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js" th:src="@{/js/jquery-1.8.0.min.js}"></script>
+		<script type="text/javascript" src="easyui/1.5/jquery.easyui.min.js" th:src="@{/easyui/1.5/jquery.easyui.min.js}"></script>
+		<script type="text/javascript" src="easyui/1.5/locale/easyui-lang-zh_CN.js" th:src="@{/easyui/1.5/locale/easyui-lang-zh_CN.js}"></script>
+		<style type="text/css">
+			input {
+				width: 320px;
+				height: 30px;
+			}
+		</style>
+	</head>
+
+	<body style="background-color: #F7F7F7">
+
+		<div id="dd" >
+			<div id="" style="text-align: center;padding: 40px;width: 800px;height: 600px;margin: 0 auto;">
+				<form th:action="@{/user/login}" action="" method="post">
+					<table align="center">
+						<tr>
+							<div id="email">
+								<th><label for="usname" style="font-weight: 700;">账号&nbsp;:</label></th>
+								<td><input type="text" name="usname" id="usname" value="" class="easyui-textbox" data-options="required:true,missingMessage:'请输入邮箱',validateOnBlur:true" /></th>
+							</div>
+						</tr><br/><br/>
+						<tr>
+							<div id="password">
+								<th><label for="uspassword" style="font-weight: 700;">密码:</label></th>
+								<td><input type="text" name="uspassword" id="uspassword" value="" class="easyui-passwordbox" data-options="required:true ,missingMessage:'请输入密码',validateOnBlur:true" /></td>
+							</div>
+						</tr>
+						<tr>
+							<div id="submit">
+								<th></th>
+								<td><input type="submit" value="LOGIN" class="easyui-linkbutton"/></td>
+							</div>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+
+	</body>
+
+</html>

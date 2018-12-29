@@ -1,0 +1,43 @@
+<script type="text/javascript" src="" th:src="@{/js/system/system.js}"></script>
+
+<style type="text/css">
+    .input-width input {
+        width: 172px;
+    }
+</style>
+<div style="text-align: center;">
+    <h3 style="text-align: center;">修改系统信息</h3>
+    <form id="updateSystem" method="post" enctype="multipart/form-data">
+        <table align="center">
+            <input type="text" value=""  th:value="${company.coid}" name="coid" hidden>
+            <tr class="input-width">
+                <th>联系我们:</th>
+                <td>
+                    <input class="easyui-textbox" data-options="required:true" th:value="${company.coconnect}" type="text"  name="coconnect"/>
+                </td>
+                <th>认证:</th>
+                <td>
+                    <input class="easyui-textbox" data-options="required:true" type="text" th:value="${company.coidentification}" name="coidentification"/>
+                </td>
+            </tr>
+            <tr class="input-width">
+
+            </tr>
+            <tr class="input-width">
+                <th>关于我们:</th>
+                <td colspan="3">
+                    <input style="width: 420px;" class="easyui-textbox" data-options="multiline:true, required:true" type="text"
+                           name="coabout" th:value="${company.coabout}"/>
+                </td>
+            </tr>
+            <tr class="input-width">
+                <th>其他内容:</th>
+                <td colspan="3">
+                    <input style="width: 420px;" class="easyui-textbox" data-options="multiline:true" type="text"
+                           name="coother" th:value="${company.coother}"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</div>
