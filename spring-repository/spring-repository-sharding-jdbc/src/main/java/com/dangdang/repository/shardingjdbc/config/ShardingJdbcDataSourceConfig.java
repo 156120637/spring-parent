@@ -10,7 +10,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @MapperScan(basePackages = {
-        "com.dangdang.storage.mysql.mapper"
+        "com.dangdang.repository.shardingjdbc.mapper"
 },
         sqlSessionFactoryRef = "sqlSessionFactoryShardingJdbc")
 public class ShardingJdbcDataSourceConfig {

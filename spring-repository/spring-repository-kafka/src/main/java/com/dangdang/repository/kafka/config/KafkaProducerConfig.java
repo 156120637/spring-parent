@@ -1,5 +1,4 @@
-package com.dangdang.repository.kafka.config;//package com.dangdang.storage.kafka.config;
-//
+package com.dangdang.repository.kafka.config;
 import lombok.Data;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.springframework.boot.context.properties.ConfigurationProperties;
