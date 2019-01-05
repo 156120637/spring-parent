@@ -62,6 +62,7 @@ spring-web-业务名称
 #### 运行方式
 ```java
 该项目是spring-boot项目，严格遵从spring-boot相关约定
+为了测试方便这里都没有删除主类 XXXApplication，在相互引用的时候可能会出现无法注入Bean的问题，只需将 XXXapplication删除即可，这也是springboot自动扫描XXXApplication下包的原因。
 ```
 #### 部署方式
 ```java
