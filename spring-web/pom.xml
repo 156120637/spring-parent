@@ -13,17 +13,17 @@
 
     <name>spring-web</name>
 
+    <!-- 引入子模块 -->
     <modules>
-        <module>spring-web-blog</module>
-        <module>spring-web-swagger</module>
-        <module>spring-web-easyui</module>
+        <module>spring-web-manager</module>
+        <module>spring-web-api</module>
     </modules>
 
     <dependencies>
         <dependency>
             <groupId>com.dangdang</groupId>
             <artifactId>spring-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>3.0.0.0</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>

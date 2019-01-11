@@ -10,10 +10,7 @@
 
     <groupId>com.dangdang</groupId>
     <artifactId>spring-common</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-
-    <name>spring-common</name>
 
     <dependencies>
         <dependency>

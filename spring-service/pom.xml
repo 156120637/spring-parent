@@ -16,22 +16,16 @@
 
     <modules>
         <module>spring-service-base</module>
-        <module>spring-service-provider</module>
-        <module>spring-service-blog</module>
         <module>spring-service-job</module>
+        <module>spring-service-biz</module>
+        <module>spring-service-listener</module>
     </modules>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>com.dangdang</groupId>
+            <artifactId>spring-common</artifactId>
+            <version>3.0.0.0</version>
         </dependency>
     </dependencies>
-
 </project>

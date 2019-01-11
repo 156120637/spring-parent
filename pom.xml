@@ -110,11 +110,6 @@
                 <artifactId>spring-kafka</artifactId>
                 <version>2.1.4.RELEASE</version>
             </dependency>
-            <dependency>
-                <groupId>org.apache.rocketmq</groupId>
-                <artifactId>rocketmq-client</artifactId>
-                <version>4.3.1</version>
-            </dependency>
             <!--适配低版本的kafka 0.9以下-->
             <dependency>
                 <groupId>org.springframework.integration</groupId>
@@ -187,6 +182,10 @@
             <dependency>
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi-ooxml</artifactId>
+                <version>3.9</version>
+            </dependency><dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml-schemas</artifactId>
                 <version>3.9</version>
             </dependency>
             <!-- lombok -->

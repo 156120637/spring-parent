@@ -10,6 +10,7 @@
 
     <artifactId>spring-service-listener</artifactId>
     <name>spring-service-listener</name>
+    <packaging>pom</packaging>
 
     <modules>
         <module>spring-service-listener-base</module>

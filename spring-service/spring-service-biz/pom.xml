@@ -12,7 +12,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>spring-service-blog</module>
+        <module>spring-service-biz-blog</module>
+        <module>spring-service-biz-easyui</module>
     </modules>
 
 
