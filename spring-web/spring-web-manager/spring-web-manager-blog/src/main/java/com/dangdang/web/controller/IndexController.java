@@ -1,4 +1,4 @@
-package com.dangdang.web.blog.controller;
+package com.dangdang.web.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
