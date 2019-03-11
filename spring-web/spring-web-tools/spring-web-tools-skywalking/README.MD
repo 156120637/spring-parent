@@ -1,7 +1,8 @@
 ### incubator-skywalking
 
 #### 介绍：
-
+ - github
+    - [文档地址](https://github.com/apache/incubator-skywalking/blob/5.x/docs/cn/Deploy-skywalking-agent-CN.md)
  - Apache下的一个apm监控工具
     - [介绍](https://github.com/apache/incubator-skywalking/blob/v5.0.0-GA/docs/README_ZH.md)
     - [下载](http://www.apache.org/dyn/closer.cgi/incubator/skywalking/5.0.0-GA/apache-skywalking-apm-incubating-5.0.0-GA.tar.gz)
@@ -89,4 +90,9 @@ CATALINA_OPTS="$CATALINA_OPTS -javaagent:/path/to/skywalking-agent/skywalking-ag
 ```java
   java -javaagent:/var/www/skywalking-agent/skywalking-agent.jar -jar yourApplication.jar
 ```
-
+#### web ui
+```java
+默认使用的是8080端口，可以使用 http://ip:8080 端口进行访问。
+默认使用的账号密码都是admin/admin 可以在webapp.yml中进行修改
+```
+![web-ui](../images/skywalking/skywalking-ui.png)
