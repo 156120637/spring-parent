@@ -90,6 +90,11 @@ CATALINA_OPTS="$CATALINA_OPTS -javaagent:/path/to/skywalking-agent/skywalking-ag
 ```java
   java -javaagent:/var/www/skywalking-agent/skywalking-agent.jar -jar yourApplication.jar
 ```
+#### 如果使用本项目结构
+```java
+可以使用agent-conf中的配置稍作修改，使用bin/start.sh 脚本配置使用
+```
+![start.sh](../images/skywalking/start.sh.png)
 #### web ui
 ```java
 默认使用的是8080端口，可以使用 http://ip:8080 端口进行访问。
