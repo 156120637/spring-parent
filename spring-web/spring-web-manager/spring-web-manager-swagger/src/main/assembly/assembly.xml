@@ -23,16 +23,11 @@
             <includes>
                 <include>**/*.properties</include>
                 <include>**/*.xml</include>
+                <include>static/**</include>
+                <include>templates/**</include>
             </includes>
             <excludes>
                 <exclude>**/*.class</exclude>
-            </excludes>
-        </fileSet>
-        <fileSet>
-            <directory>target</directory>
-            <outputDirectory>logs</outputDirectory>
-            <excludes>
-                <exclude>**/*</exclude>
             </excludes>
         </fileSet>
     </fileSets>
