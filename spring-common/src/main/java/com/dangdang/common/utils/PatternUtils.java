@@ -8,6 +8,11 @@ import java.util.regex.Pattern;
 public class PatternUtils {
 
     /**
+     * 正则表达式：纯数字
+     */
+    public static final String REGEX_DIGITAL = "^\\d+$";
+
+    /**
      * 正则表达式：验证用户名
      */
     public static final String REGEX_USERNAME = "^[a-zA-Z]\\w{5,20}$";
@@ -50,7 +55,17 @@ public class PatternUtils {
     /**
      * 正则表达式：验证IP地址
      */
-    public static final String REGEX_IP_ADDR = "(25[0-5]|2[0-4]\\d|[0-1]\\d{2}|[1-9]?\\d)";
+    public static final String REGEX_IP_ADDR = "((25[0-5]|2[0-4]\\d|((1\\d{2})|([1-9]?\\d)))\\.){3}(25[0-5]|2[0-4]\\d|((1\\d{2})|([1-9]?\\d)))";
+
+    /**
+     * 校验用户名
+     *
+     * @param digital
+     * @return 校验通过返回true，否则返回false
+     */
+    public static boolean isDigital(String digital) {
+        return Pattern.matches(REGEX_DIGITAL, digital);
+    }
 
     /**
      * 校验用户名
@@ -131,4 +146,5 @@ public class PatternUtils {
     public static boolean isIPAddr(String ipAddr) {
         return Pattern.matches(REGEX_IP_ADDR, ipAddr);
     }
+
 }

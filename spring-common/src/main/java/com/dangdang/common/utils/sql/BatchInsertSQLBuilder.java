@@ -8,8 +8,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.sql.Timestamp;
 import java.util.*;
+
 /**
- * Create by tianjiaqin 2018-12-7
  * 拼接批量插入语句工具类
  * 只支持javaBean, 不支持其他任何java类, 否则报错
  */

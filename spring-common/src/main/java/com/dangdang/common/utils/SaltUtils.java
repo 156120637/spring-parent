@@ -1,5 +1,6 @@
 package com.dangdang.common.utils;
 
+import com.dangdang.common.enums.BaseCodeEnum;
 import com.dangdang.common.exception.BaseException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -8,7 +9,9 @@ import java.lang.reflect.Field;
 import java.util.*;
 
 /**
- * exception
+ * @Author: wyg
+ * @Date: 2018/4/4 上午11:07
+ * @Description:
  */
 @Slf4j
 public class SaltUtils {
@@ -50,7 +53,7 @@ public class SaltUtils {
             }
         } catch (Throwable e) {
             log.error("真实异常打印:{}", e);
-            //打印异常信息
+            throw new BaseException(BaseCodeEnum.BASE_PARAMS_ERROR.getCode(), BaseCodeEnum.BASE_PARAMS_ERROR.getMsg());
         }
         StringBuffer digest = new StringBuffer();
         Iterator<String> iterator = fieldList.iterator();
@@ -67,7 +70,7 @@ public class SaltUtils {
         log.info("加密前参数：{}", digest.toString());
         String salt = null;
         try {
-            salt = EncryptUtils.encryptMD5(digest.toString(), null).toUpperCase();
+            salt = Md5Utils.encryptMD5(digest.toString(), null).toUpperCase();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -84,7 +87,7 @@ public class SaltUtils {
     public static void validSalt(Object obj, String salt) throws BaseException {
         String newSalt = getSalt(obj);
         if (!salt.equalsIgnoreCase(newSalt)) {
-            // 打印异常信息
+            throw new BaseException(BaseCodeEnum.BASE_PARAMS_ERROR.getCode(), BaseCodeEnum.BASE_PARAMS_ERROR.getMsg());
         }
     }
 

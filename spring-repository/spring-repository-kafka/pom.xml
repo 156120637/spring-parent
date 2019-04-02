@@ -14,10 +14,6 @@
     <name>spring-repository-kafka</name>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
         <!--如果使用的是低于0.9版本的kafka 使用 spring-integration-kafka 找到适合自己的版本-->
         <dependency>
             <groupId>org.springframework.kafka</groupId>

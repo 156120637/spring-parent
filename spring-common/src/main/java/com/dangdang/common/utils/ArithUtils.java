@@ -3,8 +3,9 @@ package com.dangdang.common.utils;
 import java.math.BigDecimal;
 
 /**
- * Create by tianjiaqin 2018-12-7
- * 由于Java的简单类型不能够精确的对浮点数进行运算，这个工具类提供精确的浮点数运算，包括加减乘除和四舍五入.
+ * @Author: wyg
+ * @Date: 2017/12/28 上午10:30
+ * @Description: 由于Java的简单类型不能够精确的对浮点数进行运算，这个工具类提供精确的浮点数运算，包括加减乘除和四舍五入.
  */
 public class ArithUtils {
 

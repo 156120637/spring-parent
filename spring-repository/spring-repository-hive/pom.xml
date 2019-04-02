@@ -15,33 +15,21 @@
 
     <dependencies>
 
+        <!-- mybatis -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
+        <!-- hive -->
         <dependency>
             <groupId>org.apache.hive</groupId>
             <artifactId>hive-jdbc</artifactId>
             <exclusions>
-                <!-- 日志 -->
+                <!-- log -->
                 <exclusion>
                     <groupId>ch.qos.logback</groupId>
                     <artifactId>logback-classic</artifactId>
@@ -54,18 +42,50 @@
                     <groupId>org.slf4j</groupId>
                     <artifactId>slf4j-log4j12</artifactId>
                 </exclusion>
+                <!-- artifactId中不要使用*，因为assembly打包不识别 -->
+                <!-- jetty -->
                 <exclusion>
                     <groupId>org.eclipse.jetty.orbit</groupId>
-                    <artifactId>*</artifactId>
+                    <artifactId>javax.servlet</artifactId>
                 </exclusion>
                 <exclusion>
                     <groupId>org.eclipse.jetty.aggregate</groupId>
-                    <artifactId>*</artifactId>
+                    <artifactId>jetty-all</artifactId>
                 </exclusion>
                 <exclusion>
                     <groupId>org.mortbay.jetty</groupId>
-                    <artifactId>*</artifactId>
+                    <artifactId>jetty</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>org.mortbay.jetty</groupId>
+                    <artifactId>jetty-sslengine</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.mortbay.jetty</groupId>
+                    <artifactId>jetty-util</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.mortbay.jetty</groupId>
+                    <artifactId>jsp-2.1</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.mortbay.jetty</groupId>
+                    <artifactId>jsp-api-2.1</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.mortbay.jetty</groupId>
+                    <artifactId>servlet-api-2.5</artifactId>
+                </exclusion>
+                <!-- tomcat -->
+                <exclusion>
+                    <groupId>tomcat</groupId>
+                    <artifactId>jasper-compiler-5.5.23</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>tomcat</groupId>
+                    <artifactId>jasper-runtime-5.5.23</artifactId>
+                </exclusion>
+
                 <exclusion>
                     <groupId>javax.servlet</groupId>
                     <artifactId>servlet-api</artifactId>

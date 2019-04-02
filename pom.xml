@@ -10,6 +10,13 @@
 
     <name>spring-parent</name>
 
+    <developers>
+        <developer>
+            <id>tianjiaqin</id>
+            <name>tianjiaqin</name>
+            <email>156120637@qq.com</email>
+        </developer>
+    </developers>
 
     <modules>
         <module>spring-common</module>
@@ -29,6 +36,15 @@
 
     <dependencyManagement>
         <dependencies>
+
+
+            <!-- spring-boot dangdang -->
+            <dependency>
+                <groupId>com.github.kuhn-he</groupId>
+                <artifactId>elastic-job-lite-spring-boot-starter</artifactId>
+                <version>2.1.5</version>
+            </dependency>
+
             <!-- spring-boot -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -37,33 +53,35 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--dbpool-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-thymeleaf</artifactId>
+                <version>1.5.4.RELEASE</version>
+            </dependency>
+
+            <!-- storage模块依赖的jar包 -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
-                <version>1.0.29</version>
+                <version>1.1.12</version>
             </dependency>
-            <!--mybatis-->
+            <!-- mybatis -->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>1.3.2</version>
             </dependency>
-            <dependency>
-                <groupId>com.github.pagehelper</groupId>
-                <artifactId>pagehelper</artifactId>
-                <version>5.0.1</version>
-            </dependency>
+            <!-- mybatis分页插件 -->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
-                <version>1.2.0</version>
+                <version>1.2.10</version>
             </dependency>
             <!-- mysql -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>5.1.38</version>
+                <version>5.1.30</version>
             </dependency>
             <!-- sqlserver -->
             <dependency>
@@ -86,58 +104,56 @@
             <dependency>
                 <groupId>org.apache.hive</groupId>
                 <artifactId>hive-jdbc</artifactId>
-                <version>2.3.0</version>
+                <version>2.1.0</version>
             </dependency>
-            <!--jdbc-->
+            <!-- kafka -->
+            <!--  spring-kafka中包含的 storage-clients 包版本与服务器端kafka-clients版本保持一致(前三位版本一致即可，最后一位可不同)，此处kafka-clients的版本为 0.10.0.0,
+                  使用spring-boot默认的版本号时，要确认spring-kafka内部含有的 storage-clients 与服务器端一致
+            （查看服务器kafka版本方法 在kafka安装目录下libs 中查找kafka-clients开头的jar文件）-->
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-jdbc</artifactId>
-                <version>1.5.4.RELEASE</version>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>1.1.1.RELEASE</version>
             </dependency>
-            <!--mq-->
+            <!-- rocketmq -->
             <dependency>
                 <groupId>org.apache.rocketmq</groupId>
                 <artifactId>rocketmq-common</artifactId>
-                <version>4.3.1</version>
+                <version>4.3.2</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.rocketmq</groupId>
                 <artifactId>rocketmq-client</artifactId>
-                <version>4.3.1</version>
+                <version>4.3.2</version>
             </dependency>
-            <dependency>
-                <groupId>org.springframework.kafka</groupId>
-                <artifactId>spring-kafka</artifactId>
-                <version>2.1.4.RELEASE</version>
-            </dependency>
-            <!--适配低版本的kafka 0.9以下-->
-            <dependency>
-                <groupId>org.springframework.integration</groupId>
-                <artifactId>spring-integration-kafka</artifactId>
-                <version>1.3.0.RELEASE</version>
+            <!-- mongodb -->
+            <!-- 此处采用spring-boot集成的spring-boot-starter-data-mongodb -->
+            <!--<dependency>
+                <groupId>org.mongodb</groupId>
+                <artifactId>mongo-java-driver</artifactId>
+                <version>3.5.0</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-mongodb</artifactId>
-                <version>1.10.16.RELEASE</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-data-redis</artifactId>
-                <version>1.5.4.RELEASE</version>
-            </dependency>
-
+                <version>2.0.1.RELEASE</version>
+            </dependency>-->
             <!-- elasticsearch -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-                <version>1.5.16.RELEASE</version>
-            </dependency>
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-elasticsearch</artifactId>
                 <version>2.0.2.RELEASE</version>
+            </dependency>
+            <!-- redis -->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-redis</artifactId>
+                <version>1.8.0.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>2.9.0</version>
             </dependency>
 
             <!-- common -->
@@ -151,28 +167,45 @@
                 <artifactId>commons-beanutils</artifactId>
                 <version>1.9.3</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>4.0</version>
+            </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>18.0</version>
             </dependency>
+            <!-- log -->
+            <!--<dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.7</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>1.7.7</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>1.1.2</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>1.1.2</version>
+            </dependency>-->
             <!-- json -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>1.2.7</version>
             </dependency>
-            <!-- Joda Time -->
-            <dependency>
-                <groupId>joda-time</groupId>
-                <artifactId>joda-time</artifactId>
-                <version>2.9.9</version>
-            </dependency>
-            <dependency>
-                <groupId>joda-time</groupId>
-                <artifactId>joda-time-jsptags</artifactId>
-                <version>1.0.2</version>
-            </dependency>
+
             <!-- excel -->
             <dependency>
                 <groupId>org.apache.poi</groupId>
@@ -184,9 +217,20 @@
                 <artifactId>poi-ooxml</artifactId>
                 <version>3.9</version>
             </dependency><dependency>
-                <groupId>org.apache.poi</groupId>
-                <artifactId>poi-ooxml-schemas</artifactId>
-                <version>3.9</version>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml-schemas</artifactId>
+            <version>3.9</version>
+        </dependency>
+            <!-- xml -->
+            <dependency>
+                <groupId>com.thoughtworks.xstream</groupId>
+                <artifactId>xstream</artifactId>
+                <version>1.4.10</version>
+            </dependency>
+            <dependency>
+                <groupId>xpp3</groupId>
+                <artifactId>xpp3_min</artifactId>
+                <version>1.1.4c</version>
             </dependency>
             <!-- lombok -->
             <dependency>
@@ -206,22 +250,33 @@
                 <version>2.6.1</version>
             </dependency>
 
-            <!-- elastic job-->
+            <!--elasticsearch 高版本 jest 包-->
             <dependency>
-                <groupId>com.github.kuhn-he</groupId>
-                <artifactId>elastic-job-lite-spring-boot-starter</artifactId>
-                <version>2.1.5</version>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>transport</artifactId>
+                <version>5.0.2</version>
             </dependency>
-
-            <!-- thymeleaf-->
+            <!--jest包-->
+            <dependency>
+                <groupId>io.searchbox</groupId>
+                <artifactId>jest</artifactId>
+                <version>0.1.7</version>
+            </dependency>
+            <!-- aop -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-thymeleaf</artifactId>
+                <artifactId>spring-boot-starter-aop</artifactId>
                 <version>1.5.4.RELEASE</version>
             </dependency>
-
+            <!--适配低版本的kafka 0.9以下-->
+            <dependency>
+                <groupId>org.springframework.integration</groupId>
+                <artifactId>spring-integration-kafka</artifactId>
+                <version>1.3.0.RELEASE</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+
 
     <build>
         <plugins>

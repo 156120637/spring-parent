@@ -7,7 +7,9 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 /**
- *  Create by tianjiaqin 2018-12-7
+ * @Author: wyg
+ * @Date: 2018/4/4 上午11:07
+ * @Description:
  */
 public class IpUtils {
 

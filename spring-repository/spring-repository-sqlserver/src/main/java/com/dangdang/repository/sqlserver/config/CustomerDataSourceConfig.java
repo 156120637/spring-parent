@@ -1,4 +1,4 @@
-package com.dangdang.repository.sqlserver.config;//package com.dangdang.storage.sqlserver.config;
+package com.dangdang.repository.sqlserver.config;
 
 import lombok.Data;
 import org.apache.ibatis.session.SqlSessionFactory;

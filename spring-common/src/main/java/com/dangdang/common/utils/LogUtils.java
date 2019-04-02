@@ -21,7 +21,7 @@ public class LogUtils {
      */
     private static final String requestLogTemplate = "RequestLog: session->[{}];request->[{}];url->[{}];method->[{}];params->[{}];";
 
-    private static final String resultLogTemplate = "ResultLog: session->[{}];request->[{}];url->[{}];method->[{}];results->[{}];";
+    private static final String resultLogTemplate = "ResultLog: session->[{}];request->[{}];url->[{}];method->[{}];timecost->[{}];results->[{}];";
 
     private static final String businessLogTemplate = "BusinessLog: session->[{}];request->[{}];class->[{}];currentMethod->[{}];message->[{}];params->[{}];results->[{}];";
 
@@ -99,7 +99,7 @@ public class LogUtils {
             if (handler != null) {
                 method = String.join(".", handler.getBean().getClass().getName(), handler.getMethod().getName());
             }
-            log.info(resultLogTemplate, request.getSession().getId(), request, request.getRequestURL().toString(), method, JSONUtils.objToStr(results, true));
+            log.info(resultLogTemplate, request.getSession().getId(), request, request.getRequestURL().toString(), method, getTimeCost(), JSONUtils.objToStr(results, true));
         } catch (Exception e) {
             exceptionLog(e.getMessage());
         }

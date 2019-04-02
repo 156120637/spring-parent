@@ -1,6 +1,8 @@
 package com.dangdang.common.utils;
 
+import com.dangdang.common.exception.BaseException;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -38,6 +40,22 @@ public class DateUtils {
     }
 
     /**
+     * 格式化时间为yyyy-MM-dd HH:mm:ss
+     *
+     * @param date 日期
+     * @return 时间字符串
+     */
+    public static String formatDate(Date date) {
+
+        String returnValue = null;
+        if (date != null) {
+            SimpleDateFormat df = new SimpleDateFormat(YYYY_MM_DD_HH_MM_SS);
+            returnValue = df.format(date);
+        }
+        return returnValue;
+    }
+
+    /**
      * 格式化时间为fmt形式
      *
      * @param date 日期
@@ -45,6 +63,9 @@ public class DateUtils {
      * @return 时间字符串
      */
     public static String formatDate(Date date, String fmt) {
+        if (StringUtils.isBlank(fmt)) {
+            fmt = YYYY_MM_DD_HH_MM_SS;
+        }
         String returnValue = null;
         if (date != null) {
             SimpleDateFormat df = new SimpleDateFormat(fmt);
@@ -107,6 +128,36 @@ public class DateUtils {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    /**
+     * 返回两个日期相差的天数,有一个时间为null返回-1
+     *
+     * @param d1 长的时间
+     * @param d2 短的时间
+     * @return int
+     */
+    public static long diffInMills(Date d1, Date d2) {
+
+        if (null == d1 || null == d2) {
+            return -1;
+        }
+        return d1.getTime() - d2.getTime();
+    }
+
+    /**
+     * 返回两个日期相差的天数,有一个时间为null返回-1
+     *
+     * @param d1 长的时间
+     * @param d2 短的时间
+     * @return int
+     */
+    public static long diffInSeconds(Date d1, Date d2) {
+
+        if (null == d1 || null == d2) {
+            return -1;
+        }
+        return (d1.getTime() - d2.getTime()) / 1000;
     }
 
     /**
@@ -315,6 +366,24 @@ public class DateUtils {
      */
     public static Long getCurrentTimeMillSecond() {
         return System.currentTimeMillis();
+    }
+
+    /**
+     * 获取当前时间-精确到秒
+     *
+     * @return
+     */
+    public static Long getCurrentTimeSecond() {
+        return System.currentTimeMillis() / 1000;
+    }
+
+    /**
+     * 获取时间-精确到秒
+     *
+     * @return
+     */
+    public static Integer getDateSecond(Date date) {
+        return Math.toIntExact(date.getTime() / 1000);
     }
 
     /**
@@ -563,7 +632,7 @@ public class DateUtils {
     /**
      * 计算用户的年龄 粗略计算
      */
-    public static String getAge(Long birthDay) {
+    public static String getAge(Long birthDay) throws BaseException {
         Date date = new Date(birthDay);
         //获取当前系统时间
         Calendar cal = Calendar.getInstance();

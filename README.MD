@@ -28,7 +28,7 @@ spring-repository-kafka
 spring-repository-mongo
     mongo的一些配置，mongoTemplate 
 spring-repository-mysql
-    mysql封装，druid连接池很好用，对hive，mysql这些效果很显著
+    mysql封装，可以使用下面的sharding-jdbc代替
 spring-repository-redis
     redis的配置，包含主从，sentinel哨兵等
 spring-repository-rocketmq
@@ -59,6 +59,8 @@ spring-web-manager
     相关管理界面
 spring-web-api
     对外抛出的接口  
+spring-web-plan
+    个人计划存放位置    
 spring-web-tools
     一些工作中能用到的工具介绍和一些学习的总结   
     
