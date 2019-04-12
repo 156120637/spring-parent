@@ -3,9 +3,7 @@ package com.dangdang.common.utils.page;
 import com.dangdang.common.exception.BaseException;
 
 /**
- * @Author: wyg
- * @Date: 2018/4/4 上午11:07
- * @Description:
+ * Create by tianjiaqin 2018/11/12
  */
 public interface ParamsCopyHandler<O, N> {
 

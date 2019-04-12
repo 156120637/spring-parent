@@ -6,9 +6,7 @@ import java.math.BigInteger;
 import java.util.*;
 
 /**
- * @Author: wyg
- * @Date: 2017/11/21 上午10:01
- * @Description:
+ * Create by tianjiaqin 2018/11/12
  */
 @Slf4j
 public class IdUtils {

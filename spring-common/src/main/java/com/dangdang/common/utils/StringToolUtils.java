@@ -12,7 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by yangpengjs on 2018/8/6.
+ * Create by tianjiaqin 2018/11/12
  */
 public class StringToolUtils {
     private static final String reZh = "[\\u4e00-\\u9fa5]+";

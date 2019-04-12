@@ -7,10 +7,9 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
- * @Author: wyg
- * @Date: 2018/4/4 上午11:07
- * @Description:
+ * Create by tianjiaqin 2018/11/12
  */
 @SuppressWarnings("rawtypes")
 public class PageTimeResult {

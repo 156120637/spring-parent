@@ -3,10 +3,9 @@ package com.dangdang.common.utils.data;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
 
+
 /**
- * @Author: wyg
- * @Date: 2018/4/4 上午11:07
- * @Description:
+ * Create by tianjiaqin 2018/11/12-23-12
  */
 public class FieldDescription {
 

@@ -1,9 +1,8 @@
 package com.dangdang.common.utils.easyui.util;
 import java.util.Random;
+
 /**
- * 给密码加盐的工具类
- * @author MaXn
- *
+ * Create by tianjiaqin 2019/4/12-23-12
  */
 public class SaltUtil {
 	public static String getSalt(int length){

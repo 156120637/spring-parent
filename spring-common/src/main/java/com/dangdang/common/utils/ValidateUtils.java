@@ -8,9 +8,7 @@ import org.springframework.validation.BindingResult;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @Author: wyg
- * @Date: 2018/4/4 上午11:07
- * @Description: 参数校验，日志打印
+ * Create by tianjiaqin 2018/11/12
  */
 @Component
 public class ValidateUtils {

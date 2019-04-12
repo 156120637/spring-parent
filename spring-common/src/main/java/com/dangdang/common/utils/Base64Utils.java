@@ -1,9 +1,11 @@
 package com.dangdang.common.utils;
 
 
-import org.apache.commons.codec.binary.Base64; ;
+import org.apache.commons.codec.binary.Base64;
 
 import java.io.*;
+
+;
 
 /**
  * <p>
@@ -14,6 +16,10 @@ import java.io.*;
  * </p>
  */
 public class Base64Utils {
+
+    /**
+     * Base64时要注意，    Base64Encoder 跟 Base64这两个类 ，Base64Encoder时会每76个字符，会加上一个\r\n 符
+     */
 
     /**
      * 文件读取缓冲区大小

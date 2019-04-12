@@ -1,9 +1,7 @@
 package com.dangdang.common.utils.page;
 
 /**
- * @Author: wyg
- * @Date: 2018/4/4 上午11:07
- * @Description:
+ * Create by tianjiaqin 2018/11/12
  */
 public interface ParamsFillHandler<O> {
 
