@@ -2,7 +2,7 @@
 #### 前提说明
 ```java
 该项目是我在工作与学习过程中的学习与总结。仅用于交流学习.
-master都是使用conf进行配置的，可能在使用的过程会不是很方便，因为有时候指向引入一些model，并不想引入一些配置，所以使用xml进行配置还是有很大好处的。等有时间我会在分支上增加一版使用xml进行配置的版本。
+master都是使用 @Configuration 进行配置的，可能在使用的过程会不是很方便，因为有时候只想引入一些model，并不想引入一些配置，所以使用xml进行配置还是有很大好处的。等有时间我会在分支上增加一版使用xml进行配置的版本。
 ```
 #### 项目结构说明
 - spring-parent(父项目)
@@ -42,11 +42,11 @@ spring-repository-sqlserver
 - spring-service
 ```java
 spring-service-base
-    基础服务层(存放枚举，公用键值等)
+    基础服务层(存放枚举，公用键值，常量等)
 spring-service-biz
     每一个接口对应的服务实现
 spring-service-job
-    elastic-job 定时作业
+    elastic-job 定时作业（使用的是git开源的springboot注解版，也可以使用当当封装的springboot版本。）
 spring-service-listener
     一些消息监听作业（kafka，rocketmq,rabbitmq等）            
 ```
