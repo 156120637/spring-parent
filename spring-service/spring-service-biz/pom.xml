@@ -14,7 +14,10 @@
     <modules>
         <module>spring-service-biz-blog</module>
         <module>spring-service-biz-easyui</module>
+        <!-- 切面使用 -->
         <module>spring-service-biz-aspectj</module>
+        <!-- 异步任务 -->
+        <module>spring-service-biz-async</module>
     </modules>
 
 
