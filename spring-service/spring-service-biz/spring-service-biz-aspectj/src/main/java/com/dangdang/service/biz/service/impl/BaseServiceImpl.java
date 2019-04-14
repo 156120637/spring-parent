@@ -1,5 +1,6 @@
 package com.dangdang.service.biz.service.impl;
 
+import com.dangdang.service.biz.anno.AnnoInterfaceAspectJ;
 import com.dangdang.service.biz.service.BaseService;
 
 /**
@@ -12,5 +13,13 @@ public class BaseServiceImpl implements BaseService {
     public String base() {
 
         return null;
+    }
+    
+    
+    @AnnoInterfaceAspectJ(description = "自定义注解 aspectJ")
+    public String annoBase(){
+        
+        return null;
+        
     }
 }
