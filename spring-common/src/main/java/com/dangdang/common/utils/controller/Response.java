@@ -23,7 +23,7 @@ public class Response {
     /**
      * 接口耗时
      */
-    private long responseTime;
+    private long costTime;
     
     private Object data;
 

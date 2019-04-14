@@ -13,17 +13,18 @@
 
     <modules>
         <module>spring-web-api-base</module>
+        <module>spring-web-api-aspectj</module>
     </modules>
+
     <dependencies>
+
+        <!-- 引入基本service base 包 -->
         <dependency>
-            <groupId>io.searchbox</groupId>
-            <artifactId>jest</artifactId>
-            <version>0.1.7</version>
+            <groupId>com.dangdang</groupId>
+            <artifactId>spring-service-base</artifactId>
+            <version>3.0.0.0</version>
         </dependency>
-        <!-- aop -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
+
     </dependencies>
+
 </project>

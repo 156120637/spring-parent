@@ -1,5 +1,6 @@
 package com.dangdang.service.biz.anno;
 
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * Create by tianjiaqin 2019-04-14
  */
+@Slf4j
 @Aspect
 @Component
 public class AnnoAspectJ {
@@ -33,7 +35,7 @@ public class AnnoAspectJ {
 
     @Before(value = "annoPointCut(annoInterfaceAspectJ)")
     public void doBeforeBaseService(JoinPoint joinPoint , AnnoInterfaceAspectJ annoInterfaceAspectJ) {
-
+        log.info("anno Joinpoint is {}" , joinPoint);
     }
 
     /**
@@ -42,6 +44,7 @@ public class AnnoAspectJ {
      */
     @After(value = "annoPointCut(annoInterfaceAspectJ)")
     public void doAfterBaseService(JoinPoint joinPoint, AnnoInterfaceAspectJ annoInterfaceAspectJ){
+        log.info("anno Joinpoint is {}" , joinPoint);
 
     }
 
@@ -52,6 +55,7 @@ public class AnnoAspectJ {
      */
     @AfterThrowing(value = "annoPointCut(annoInterfaceAspectJ)" , throwing = "ex")
     public void doAfterThrowsBaseService(JoinPoint joinPoint , Exception ex, AnnoInterfaceAspectJ annoInterfaceAspectJ){
+        log.info("anno Joinpoint is {}" , joinPoint);
 
     }
 
@@ -65,6 +69,7 @@ public class AnnoAspectJ {
      */
     @AfterReturning(value = "annoPointCut(annoInterfaceAspectJ)", returning = "results")
     public void doAfterReturnBaseService(JoinPoint joinPoint, Object results, AnnoInterfaceAspectJ annoInterfaceAspectJ) {
+        log.info("anno Joinpoint is {}" , joinPoint);
         Object[] args = joinPoint.getArgs();
         for (Object arg : args) {
             if (arg instanceof String) {

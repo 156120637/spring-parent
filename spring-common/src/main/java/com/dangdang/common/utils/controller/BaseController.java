@@ -36,7 +36,7 @@ public class BaseController {
         response.setStatusCode(BaseCodeEnum.BASE_REQUEST_SUCCESS.getCode());
         response.setStatusMsg(BaseCodeEnum.BASE_REQUEST_SUCCESS.getMsg());
         // 耗时时间
-        response.setResponseTime(LogUtils.getTimeCost());
+        response.setCostTime(LogUtils.getTimeCost());
 
         LogUtils.resultLog(response);
         return response;
@@ -48,7 +48,7 @@ public class BaseController {
         response.setStatusCode(BaseCodeEnum.BASE_REQUEST_SUCCESS.getCode());
         response.setStatusMsg(BaseCodeEnum.BASE_REQUEST_SUCCESS.getMsg());
         // 耗时时间
-        response.setResponseTime(LogUtils.getTimeCost());
+        response.setCostTime(LogUtils.getTimeCost());
         response.setData(obj);
 
         LogUtils.resultLog(response);
@@ -66,7 +66,7 @@ public class BaseController {
         response.setStatusCode(exception.getCode());
         response.setStatusMsg(exception.getMessage());
         // 耗时时间
-        response.setResponseTime(LogUtils.getTimeCost());
+        response.setCostTime(LogUtils.getTimeCost());
 
         LogUtils.resultLog(response);
         return response;
@@ -82,7 +82,7 @@ public class BaseController {
         response.setStatusCode(BaseCodeEnum.BASE_SYSTEM_ERROR.getCode());
         response.setStatusMsg(exception.getMessage());
         // 耗时时间
-        response.setResponseTime(LogUtils.getTimeCost());
+        response.setCostTime(LogUtils.getTimeCost());
 
         LogUtils.resultLog(response);
         return response;
@@ -103,7 +103,7 @@ public class BaseController {
         response.setStatusCode(BaseCodeEnum.BASE_SYSTEM_ERROR.getCode());
         response.setStatusMsg(HttpStatus.METHOD_NOT_ALLOWED.getReasonPhrase());
         // 耗时时间
-        response.setResponseTime(LogUtils.getTimeCost());
+        response.setCostTime(LogUtils.getTimeCost());
 
         LogUtils.resultLog(response);
         return response;
@@ -121,7 +121,7 @@ public class BaseController {
         response.setStatusCode(BaseCodeEnum.BASE_SYSTEM_ERROR.getCode());
         response.setStatusMsg(HttpStatus.METHOD_NOT_ALLOWED.getReasonPhrase());
         // 耗时时间
-        response.setResponseTime(LogUtils.getTimeCost());
+        response.setCostTime(LogUtils.getTimeCost());
 
         LogUtils.resultLog(response);
         return response;
@@ -139,7 +139,7 @@ public class BaseController {
         response.setStatusCode(BaseCodeEnum.BASE_SYSTEM_ERROR.getCode());
         response.setStatusMsg(HttpStatus.METHOD_NOT_ALLOWED.getReasonPhrase());
         // 耗时时间
-        response.setResponseTime(LogUtils.getTimeCost());
+        response.setCostTime(LogUtils.getTimeCost());
         LogUtils.resultLog(response);
         return response;
     }

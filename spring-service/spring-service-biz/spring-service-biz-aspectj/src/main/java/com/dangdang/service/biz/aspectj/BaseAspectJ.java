@@ -22,7 +22,7 @@ public class BaseAspectJ {
     /**
      * 定义切入点表达式
      */
-    @Pointcut("execution(* com.dangdang.service.biz.service.impl.BaseServiceImpl.base(..))")
+    @Pointcut("execution(* com.dangdang.service.biz.service.impl.AspectJServiceImpl.base(..))")
     public void basePointCut() {
     }
 
@@ -33,7 +33,7 @@ public class BaseAspectJ {
 
     @Before(value = "basePointCut()")
     public void doBeforeBaseService(JoinPoint joinPoint) {
-
+        log.info("base aspectJ ,joinpoint is {}" , joinPoint);
     }
 
     /**
@@ -42,7 +42,7 @@ public class BaseAspectJ {
      */
     @After(value = "basePointCut()")
     public void doAfterBaseService(JoinPoint joinPoint){
-
+        log.info("base aspectJ ,joinpoint is {}" , joinPoint);
     }
 
     /**
@@ -52,7 +52,7 @@ public class BaseAspectJ {
      */
     @AfterThrowing(value = "basePointCut()" , throwing = "ex")
     public void doAfterThrowsBaseService(JoinPoint joinPoint , Exception ex){
-
+        log.info("base aspectJ ,joinpoint is {}" , joinPoint);
     }
 
 
@@ -65,6 +65,7 @@ public class BaseAspectJ {
      */
     @AfterReturning(value = "basePointCut()", returning = "results")
     public void doAfterReturnBaseService(JoinPoint joinPoint, Object results) {
+        log.info("base aspectJ ,joinpoint is {}" , joinPoint);
         Object[] args = joinPoint.getArgs();
         for (Object arg : args) {
             if (arg instanceof String) {
