@@ -63,7 +63,7 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
-                <version>1.1.12</version>
+                <version>1.2.31</version>
             </dependency>
             <!-- mybatis -->
             <dependency>
@@ -104,7 +104,7 @@
             <dependency>
                 <groupId>org.apache.hive</groupId>
                 <artifactId>hive-jdbc</artifactId>
-                <version>2.1.0</version>
+                <version>2.3.4</version>
             </dependency>
             <!-- kafka -->
             <!--  spring-kafka中包含的 storage-clients 包版本与服务器端kafka-clients版本保持一致(前三位版本一致即可，最后一位可不同)，此处kafka-clients的版本为 0.10.0.0,
