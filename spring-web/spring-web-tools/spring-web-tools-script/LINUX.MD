@@ -33,3 +33,12 @@ grep '字符' $ file
             
     
 ```
+```powershell
+命令和管道的使用
+less file |grep '' 过滤指定的文件
+建立软链接
+ln -fs target_dir base_dir
+    建立软链接
+
+
+```
