@@ -18,6 +18,8 @@
         <module>spring-service-biz-aspectj</module>
         <!-- 异步任务 -->
         <module>spring-service-biz-async</module>
+        <!-- spring-retry 中的重试机制 -->
+        <module>spring-service-biz-retry</module>
     </modules>
 
 

@@ -85,5 +85,5 @@ spring-web-tools
 #### 联系方式
 ```java
 QQ:156120637
-Email:tianjiaqin@dangdang.com
+Email:156120637@qq.com
 ```    
