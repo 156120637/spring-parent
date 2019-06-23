@@ -35,6 +35,8 @@ spring-repository-rocketmq
     对mq的一些封装使用方法
 spring-repository-sharding-jdbc
     当当开源的分库分表框架
+spring-repository-shardingsphere
+    由shading-jdbc 交由apache维护的第一个版本 4.0
 spring-repository-sqlserver
     sqlserver的相关配置
     
