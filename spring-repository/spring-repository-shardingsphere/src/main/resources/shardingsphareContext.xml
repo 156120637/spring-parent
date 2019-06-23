@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:sharding="http://shardingsphere.apache.org/schema/shardingsphere/sharding"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context.xsd
+                        http://www.springframework.org/schema/tx
+                        http://www.springframework.org/schema/tx/spring-tx.xsd
+                        http://shardingsphere.apache.org/schema/shardingsphere/sharding
+                        http://shardingsphere.apache.org/schema/shardingsphere/sharding/sharding.xsd">
+
+    <context:property-placeholder location="classpath:rdb.properties" ignore-unresolvable="true"/>
+
+    <bean id="ds_customer_m_0" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${customer_00_master_jdbc.driver}"/>
+        <property name="url" value="${customer_00_master_jdbc.url}"/>
+        <property name="username" value="${customer_00_master_jdbc.username}"/>
+        <property name="password" value="${customer_00_master_jdbc.password}"/>
+        <property name="maxActive" value="${customer_00_master_jdbc.max.active}"/>
+        <property name="minIdle" value="${customer_00_master_jdbc.min.idle}"/>
+        <property name="maxWait" value="${customer_00_master_jdbc.max.wait}"/>
+        <property name="initialSize" value="${customer_00_master_jdbc.initial.size}"/>
+        <property name="testOnBorrow" value="${customer_00_master_jdbc.test.on.borrow}"/>
+        <property name="validationQuery" value="${customer_00_master_jdbc.validationQuery}"/>
+    </bean>
+    <bean id="ds_customer_m_1" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${customer_01_master_jdbc.driver}"/>
+        <property name="url" value="${customer_01_master_jdbc.url}"/>
+        <property name="username" value="${customer_01_master_jdbc.username}"/>
+        <property name="password" value="${customer_01_master_jdbc.password}"/>
+        <property name="maxActive" value="${customer_01_master_jdbc.max.active}"/>
+        <property name="minIdle" value="${customer_01_master_jdbc.min.idle}"/>
+        <property name="maxWait" value="${customer_01_master_jdbc.max.wait}"/>
+        <property name="initialSize" value="${customer_01_master_jdbc.initial.size}"/>
+        <property name="testOnBorrow" value="${customer_01_master_jdbc.test.on.borrow}"/>
+        <property name="validationQuery" value="${customer_01_master_jdbc.validationQuery}"/>
+    </bean>
+    <bean id="ds_customer_m_2" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${customer_02_master_jdbc.driver}"/>
+        <property name="url" value="${customer_02_master_jdbc.url}"/>
+        <property name="username" value="${customer_02_master_jdbc.username}"/>
+        <property name="password" value="${customer_02_master_jdbc.password}"/>
+        <property name="maxActive" value="${customer_02_master_jdbc.max.active}"/>
+        <property name="minIdle" value="${customer_02_master_jdbc.min.idle}"/>
+        <property name="maxWait" value="${customer_02_master_jdbc.max.wait}"/>
+        <property name="initialSize" value="${customer_02_master_jdbc.initial.size}"/>
+        <property name="testOnBorrow" value="${customer_02_master_jdbc.test.on.borrow}"/>
+        <property name="validationQuery" value="${customer_02_master_jdbc.validationQuery}"/>
+    </bean>
+    <bean id="ds_customer_m_3" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${customer_03_master_jdbc.driver}"/>
+        <property name="url" value="${customer_03_master_jdbc.url}"/>
+        <property name="username" value="${customer_03_master_jdbc.username}"/>
+        <property name="password" value="${customer_03_master_jdbc.password}"/>
+        <property name="maxActive" value="${customer_03_master_jdbc.max.active}"/>
+        <property name="minIdle" value="${customer_03_master_jdbc.min.idle}"/>
+        <property name="maxWait" value="${customer_03_master_jdbc.max.wait}"/>
+        <property name="initialSize" value="${customer_03_master_jdbc.initial.size}"/>
+        <property name="testOnBorrow" value="${customer_03_master_jdbc.test.on.borrow}"/>
+        <property name="validationQuery" value="${customer_03_master_jdbc.validationQuery}"/>
+    </bean>
+    <bean id="ds_customer_m_4" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${customer_04_master_jdbc.driver}"/>
+        <property name="url" value="${customer_04_master_jdbc.url}"/>
+        <property name="username" value="${customer_04_master_jdbc.username}"/>
+        <property name="password" value="${customer_04_master_jdbc.password}"/>
+        <property name="maxActive" value="${customer_04_master_jdbc.max.active}"/>
+        <property name="minIdle" value="${customer_04_master_jdbc.min.idle}"/>
+        <property name="maxWait" value="${customer_04_master_jdbc.max.wait}"/>
+        <property name="initialSize" value="${customer_04_master_jdbc.initial.size}"/>
+        <property name="testOnBorrow" value="${customer_04_master_jdbc.test.on.borrow}"/>
+        <property name="validationQuery" value="${customer_04_master_jdbc.validationQuery}"/>
+    </bean>
+    <bean id="ds_customer_m_5" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${customer_05_master_jdbc.driver}"/>
+        <property name="url" value="${customer_05_master_jdbc.url}"/>
+        <property name="username" value="${customer_05_master_jdbc.username}"/>
+        <property name="password" value="${customer_05_master_jdbc.password}"/>
+        <property name="maxActive" value="${customer_05_master_jdbc.max.active}"/>
+        <property name="minIdle" value="${customer_05_master_jdbc.min.idle}"/>
+        <property name="maxWait" value="${customer_05_master_jdbc.max.wait}"/>
+        <property name="initialSize" value="${customer_05_master_jdbc.initial.size}"/>
+        <property name="testOnBorrow" value="${customer_05_master_jdbc.test.on.borrow}"/>
+        <property name="validationQuery" value="${customer_05_master_jdbc.validationQuery}"/>
+    </bean>
+    <bean id="ds_customer_m_6" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${customer_06_master_jdbc.driver}"/>
+        <property name="url" value="${customer_06_master_jdbc.url}"/>
+        <property name="username" value="${customer_06_master_jdbc.username}"/>
+        <property name="password" value="${customer_06_master_jdbc.password}"/>
+        <property name="maxActive" value="${customer_06_master_jdbc.max.active}"/>
+        <property name="minIdle" value="${customer_06_master_jdbc.min.idle}"/>
+        <property name="maxWait" value="${customer_06_master_jdbc.max.wait}"/>
+        <property name="initialSize" value="${customer_06_master_jdbc.initial.size}"/>
+        <property name="testOnBorrow" value="${customer_06_master_jdbc.test.on.borrow}"/>
+        <property name="validationQuery" value="${customer_06_master_jdbc.validationQuery}"/>
+    </bean>
+    <bean id="ds_customer_m_7" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${customer_07_master_jdbc.driver}"/>
+        <property name="url" value="${customer_07_master_jdbc.url}"/>
+        <property name="username" value="${customer_07_master_jdbc.username}"/>
+        <property name="password" value="${customer_07_master_jdbc.password}"/>
+        <property name="maxActive" value="${customer_07_master_jdbc.max.active}"/>
+        <property name="minIdle" value="${customer_07_master_jdbc.min.idle}"/>
+        <property name="maxWait" value="${customer_07_master_jdbc.max.wait}"/>
+        <property name="initialSize" value="${customer_07_master_jdbc.initial.size}"/>
+        <property name="testOnBorrow" value="${customer_07_master_jdbc.test.on.borrow}"/>
+        <property name="validationQuery" value="${customer_07_master_jdbc.validationQuery}"/>
+    </bean>
+
+    <!-- 从库 -->
+    <bean id="ds_customer_s_0" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${customer_00_slave_jdbc.driver}"/>
+        <property name="url" value="${customer_00_slave_jdbc.url}"/>
+        <property name="username" value="${customer_00_slave_jdbc.username}"/>
+        <property name="password" value="${customer_00_slave_jdbc.password}"/>
+        <property name="maxActive" value="${customer_00_slave_jdbc.max.active}"/>
+        <property name="minIdle" value="${customer_00_slave_jdbc.min.idle}"/>
+        <property name="maxWait" value="${customer_00_slave_jdbc.max.wait}"/>
+        <property name="initialSize" value="${customer_00_slave_jdbc.initial.size}"/>
+        <property name="testOnBorrow" value="${customer_00_slave_jdbc.test.on.borrow}"/>
+        <property name="validationQuery" value="${customer_00_slave_jdbc.validationQuery}"/>
+    </bean>
+    <bean id="ds_customer_s_1" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${customer_01_slave_jdbc.driver}"/>
+        <property name="url" value="${customer_01_slave_jdbc.url}"/>
+        <property name="username" value="${customer_01_slave_jdbc.username}"/>
+        <property name="password" value="${customer_01_slave_jdbc.password}"/>
+        <property name="maxActive" value="${customer_01_slave_jdbc.max.active}"/>
+        <property name="minIdle" value="${customer_01_slave_jdbc.min.idle}"/>
+        <property name="maxWait" value="${customer_01_slave_jdbc.max.wait}"/>
+        <property name="initialSize" value="${customer_01_slave_jdbc.initial.size}"/>
+        <property name="testOnBorrow" value="${customer_01_slave_jdbc.test.on.borrow}"/>
+        <property name="validationQuery" value="${customer_01_slave_jdbc.validationQuery}"/>
+    </bean>
+    <bean id="ds_customer_s_2" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${customer_02_slave_jdbc.driver}"/>
+        <property name="url" value="${customer_02_slave_jdbc.url}"/>
+        <property name="username" value="${customer_02_slave_jdbc.username}"/>
+        <property name="password" value="${customer_02_slave_jdbc.password}"/>
+        <property name="maxActive" value="${customer_02_slave_jdbc.max.active}"/>
+        <property name="minIdle" value="${customer_02_slave_jdbc.min.idle}"/>
+        <property name="maxWait" value="${customer_02_slave_jdbc.max.wait}"/>
+        <property name="initialSize" value="${customer_02_slave_jdbc.initial.size}"/>
+        <property name="testOnBorrow" value="${customer_02_slave_jdbc.test.on.borrow}"/>
+        <property name="validationQuery" value="${customer_02_slave_jdbc.validationQuery}"/>
+    </bean>
+    <bean id="ds_customer_s_3" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${customer_03_slave_jdbc.driver}"/>
+        <property name="url" value="${customer_03_slave_jdbc.url}"/>
+        <property name="username" value="${customer_03_slave_jdbc.username}"/>
+        <property name="password" value="${customer_03_slave_jdbc.password}"/>
+        <property name="maxActive" value="${customer_03_slave_jdbc.max.active}"/>
+        <property name="minIdle" value="${customer_03_slave_jdbc.min.idle}"/>
+        <property name="maxWait" value="${customer_03_slave_jdbc.max.wait}"/>
+        <property name="initialSize" value="${customer_03_slave_jdbc.initial.size}"/>
+        <property name="testOnBorrow" value="${customer_03_slave_jdbc.test.on.borrow}"/>
+        <property name="validationQuery" value="${customer_03_slave_jdbc.validationQuery}"/>
+    </bean>
+    <bean id="ds_customer_s_4" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${customer_04_slave_jdbc.driver}"/>
+        <property name="url" value="${customer_04_slave_jdbc.url}"/>
+        <property name="username" value="${customer_04_slave_jdbc.username}"/>
+        <property name="password" value="${customer_04_slave_jdbc.password}"/>
+        <property name="maxActive" value="${customer_04_slave_jdbc.max.active}"/>
+        <property name="minIdle" value="${customer_04_slave_jdbc.min.idle}"/>
+        <property name="maxWait" value="${customer_04_slave_jdbc.max.wait}"/>
+        <property name="initialSize" value="${customer_04_slave_jdbc.initial.size}"/>
+        <property name="testOnBorrow" value="${customer_04_slave_jdbc.test.on.borrow}"/>
+        <property name="validationQuery" value="${customer_04_slave_jdbc.validationQuery}"/>
+    </bean>
+    <bean id="ds_customer_s_5" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${customer_05_slave_jdbc.driver}"/>
+        <property name="url" value="${customer_05_slave_jdbc.url}"/>
+        <property name="username" value="${customer_05_slave_jdbc.username}"/>
+        <property name="password" value="${customer_05_slave_jdbc.password}"/>
+        <property name="maxActive" value="${customer_05_slave_jdbc.max.active}"/>
+        <property name="minIdle" value="${customer_05_slave_jdbc.min.idle}"/>
+        <property name="maxWait" value="${customer_05_slave_jdbc.max.wait}"/>
+        <property name="initialSize" value="${customer_05_slave_jdbc.initial.size}"/>
+        <property name="testOnBorrow" value="${customer_05_slave_jdbc.test.on.borrow}"/>
+        <property name="validationQuery" value="${customer_05_slave_jdbc.validationQuery}"/>
+    </bean>
+    <bean id="ds_customer_s_6" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${customer_06_slave_jdbc.driver}"/>
+        <property name="url" value="${customer_06_slave_jdbc.url}"/>
+        <property name="username" value="${customer_06_slave_jdbc.username}"/>
+        <property name="password" value="${customer_06_slave_jdbc.password}"/>
+        <property name="maxActive" value="${customer_06_slave_jdbc.max.active}"/>
+        <property name="minIdle" value="${customer_06_slave_jdbc.min.idle}"/>
+        <property name="maxWait" value="${customer_06_slave_jdbc.max.wait}"/>
+        <property name="initialSize" value="${customer_06_slave_jdbc.initial.size}"/>
+        <property name="testOnBorrow" value="${customer_06_slave_jdbc.test.on.borrow}"/>
+        <property name="validationQuery" value="${customer_06_slave_jdbc.validationQuery}"/>
+    </bean>
+    <bean id="ds_customer_s_7" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${customer_07_slave_jdbc.driver}"/>
+        <property name="url" value="${customer_07_slave_jdbc.url}"/>
+        <property name="username" value="${customer_07_slave_jdbc.username}"/>
+        <property name="password" value="${customer_07_slave_jdbc.password}"/>
+        <property name="maxActive" value="${customer_07_slave_jdbc.max.active}"/>
+        <property name="minIdle" value="${customer_07_slave_jdbc.min.idle}"/>
+        <property name="maxWait" value="${customer_07_slave_jdbc.max.wait}"/>
+        <property name="initialSize" value="${customer_07_slave_jdbc.initial.size}"/>
+        <property name="testOnBorrow" value="${customer_07_slave_jdbc.test.on.borrow}"/>
+        <property name="validationQuery" value="${customer_07_slave_jdbc.validationQuery}"/>
+    </bean>
+
+
+    <bean id="randomStrategy" class="org.apache.shardingsphere.core.strategy.masterslave.RandomMasterSlaveLoadBalanceAlgorithm" />
+
+    <sharding:inline-strategy id="databaseStrategy" sharding-column="cust_id" algorithm-expression="ds_ms_${cust_id.longValue()%8}" />
+
+
+    <sharding:data-source id="shardingDataSource">
+        <sharding:sharding-rule data-source-names="ds_customer_m_0,ds_customer_m_1,ds_customer_m_2,ds_customer_m_3,ds_customer_m_4,ds_customer_m_5,ds_customer_m_6,ds_customer_m_7,ds_customer_s_0,ds_customer_s_1,ds_customer_s_2,ds_customer_s_3,ds_customer_s_4,ds_customer_s_5,ds_customer_s_6,ds_customer_s_7">
+            <sharding:master-slave-rules>
+                <!-- 主从配置 -->
+                <sharding:master-slave-rule id="ds_ms_0" master-data-source-name="ds_customer_m_0" slave-data-source-names="ds_customer_s_0" strategy-ref="randomStrategy" />
+                <sharding:master-slave-rule id="ds_ms_1" master-data-source-name="ds_customer_m_1" slave-data-source-names="ds_customer_s_1" strategy-ref="randomStrategy" />
+                <sharding:master-slave-rule id="ds_ms_2" master-data-source-name="ds_customer_m_2" slave-data-source-names="ds_customer_s_2" strategy-ref="randomStrategy" />
+                <sharding:master-slave-rule id="ds_ms_3" master-data-source-name="ds_customer_m_3" slave-data-source-names="ds_customer_s_3" strategy-ref="randomStrategy" />
+                <sharding:master-slave-rule id="ds_ms_4" master-data-source-name="ds_customer_m_4" slave-data-source-names="ds_customer_s_4" strategy-ref="randomStrategy" />
+                <sharding:master-slave-rule id="ds_ms_5" master-data-source-name="ds_customer_m_5" slave-data-source-names="ds_customer_s_5" strategy-ref="randomStrategy" />
+                <sharding:master-slave-rule id="ds_ms_6" master-data-source-name="ds_customer_m_6" slave-data-source-names="ds_customer_s_6" strategy-ref="randomStrategy" />
+                <sharding:master-slave-rule id="ds_ms_7" master-data-source-name="ds_customer_m_7" slave-data-source-names="ds_customer_s_7" strategy-ref="randomStrategy" />
+
+            </sharding:master-slave-rules>
+
+            <!-- 表分片规则配置对象 -->
+            <sharding:table-rules>
+                <!-- 只分库，不分表 -->
+                <sharding:table-rule logic-table="customer"  database-strategy-ref="databaseStrategy"/>
+                <sharding:table-rule logic-table="customer_login_log"  database-strategy-ref="databaseStrategy" />
+            </sharding:table-rules>
+
+        </sharding:sharding-rule>
+    </sharding:data-source>
+
+    <bean id="shardingTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="shardingDataSource" />
+    </bean>
+
+    <tx:annotation-driven transaction-manager="shardingTransactionManager" />
+
+    <!-- 配置 -->
+    <bean id="configuration" class="org.apache.ibatis.session.Configuration">
+        <!-- 驼峰配置 -->
+        <property name="mapUnderscoreToCamelCase" value="true"/>
+    </bean>
+
+    <bean id="shardingSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="shardingDataSource"/>
+        <property name="configuration" ref="configuration"/>
+        <!--<property name="mapperLocations" value="classpath*:META-INF/mybatis/mapper/*/*Repository.xml"/>-->
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.dangdang.storage.mysql.mapper"/>
+        <property name="sqlSessionFactoryBeanName" value="shardingSqlSessionFactory"/>
+    </bean>
+</beans>

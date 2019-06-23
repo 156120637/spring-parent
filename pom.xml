@@ -100,6 +100,34 @@
                 <artifactId>sharding-jdbc-config-spring</artifactId>
                 <version>1.5.4</version>
             </dependency>
+
+            <!-- shardingsphare 现由apach运营，更新若干特性，修改若干bug问题 -->
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-core</artifactId>
+                <version>4.0.0-RC1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-orchestration</artifactId>
+                <version>4.0.0-RC1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-namespace</artifactId>
+                <version>4.0.0-RC1</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-core-api</artifactId>
+                <version>4.0.0-RC1</version>
+            </dependency>
+
+
             <!-- hive -->
             <dependency>
                 <groupId>org.apache.hive</groupId>
